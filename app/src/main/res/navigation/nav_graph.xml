@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.newsapp.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bookmarkFragment"
+            app:destination="@id/bookmarkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.newsapp.presentation.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="article"
+            app:argType="com.example.core.domain.models.Article" />
+    </fragment>
+    <fragment
+        app:moduleName="bookmark"
+        android:id="@+id/bookmarkFragment"
+        android:name="com.example.bookmark.presentation.BookmarkFragment"
+        tools:layout="@layout/fragment_bookmark">
+        <action
+            android:id="@+id/action_bookmarkFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
