@@ -3,7 +3,7 @@
     <string name="search">Search</string>
     <string name="bookmark">Bookmark</string>
     <string name="back">Back</string>
-    <string name="detail">Detail</string>
+    <string name="detail">Detail Article</string>
     <string name="source">Source</string>
     <string name="title_bookmark">Bookmark</string>
 </resources>
