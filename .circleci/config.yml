@@ -28,7 +28,7 @@ jobs:
             APIKEY: cf78d0b60b0f45acaa8abeba08cc6e29
             BASEURL: https://newsapi.org/v2/
             PARAPHRASE: nadhifm
-          command: echo -e "APIKEY="$APIKEY"\nBASEURL="$BASEURL"\nPARAPHRASE="$PARAPHRASE""
+          command: printf "APIKEY="$APIKEY"\nBASEURL="$BASEURL"\nPARAPHRASE="$PARAPHRASE""
       - restore_cache:
           key: android-orb-v1-
       - run:
