@@ -12,6 +12,7 @@ orbs:
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build:
+    context: context
     working_directory: ~/repo
     # These next lines define the Android machine image executor.
     # See: https://circleci.com/docs/executor-types/
@@ -22,9 +23,9 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
-      - run: printenv $APIKEY
-      - run: printenv "APIKEY=$APIKEY"
-      - run: printenv "APIKEY=$APIKEY" >> ~/repo/local.properties
+      - run: echo $APIKEY
+      - run: echo "APIKEY=$APIKEY"
+      - run: echo "APIKEY=$APIKEY" >> ~/repo/local.properties
       - restore_cache:
           key: android-orb-v1-
       - run:
