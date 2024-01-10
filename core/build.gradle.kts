@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -17,8 +19,12 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        val localFile = project.rootProject.file("local.properties")
+        val properties = Properties()
+        properties.load(localFile.inputStream())
 
-        buildConfigField("String", "APIKEY", "\"cf78d0b60b0f45acaa8abeba08cc6e29\"")
+        val apiKey = properties.getProperty("APIKEY") ?: ""
+        buildConfigField("String", "APIKEY", apiKey)
 
         buildConfigField("String", "BASEURL", "\"https://newsapi.org/v2/\"")
 
