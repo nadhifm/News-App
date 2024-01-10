@@ -22,12 +22,9 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
-      - run: echo "APIKEY=$APIKEY" >> ~/repo/local.properties
+      - run: echo "export APIKEY=$APIKEY" >> ~/repo/local.properties
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "build.gradle" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          key: android-orb-v1-
       - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
