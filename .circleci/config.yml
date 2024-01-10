@@ -29,7 +29,8 @@ jobs:
             BASEURL: https://newsapi.org/v2/
             PARAPHRASE: nadhifm
           command:
-            - echo 'APIKEY="$APIKEY";\nBASEURL="$BASEURL";\nPARAPHRASE="$PARAPHRASE";' >> ~/repo/local.properties
+            - echo "APIKEY="$APIKEY";\nBASEURL="$BASEURL";\nPARAPHRASE="$PARAPHRASE";"
+            - echo "APIKEY="$APIKEY";\nBASEURL="$BASEURL";\nPARAPHRASE="$PARAPHRASE";" >> ~/repo/local.properties
       - restore_cache:
           key: android-orb-v1-
       - run:
