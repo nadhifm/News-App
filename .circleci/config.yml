@@ -22,7 +22,7 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
-      - run: printf "APIKEY=%s" $APIKEY >> ~/repo/local.properties
+      - run: echo "APIKEY=$APIKEY"
       - restore_cache:
           key: android-orb-v1-
       - run:
