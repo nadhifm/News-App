@@ -22,8 +22,9 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
-      - run: echo "APIKEY=$APIKEY"
-      - run: echo "APIKEY=$APIKEY" >> ~/repo/local.properties
+      - run: echo $APIKEY
+      - run: echo "export $APIKEY"
+      - run: echo "export APIKEY=$APIKEY" >> ~/repo/local.properties
       - restore_cache:
           key: android-orb-v1-
       - run:
