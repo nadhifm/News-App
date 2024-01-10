@@ -26,9 +26,11 @@ android {
         val apiKey = properties.getProperty("APIKEY") ?: ""
         buildConfigField("String", "APIKEY", apiKey)
 
-        buildConfigField("String", "BASEURL", "\"https://newsapi.org/v2/\"")
+        val baseUrl = properties.getProperty("BASEURL") ?: ""
+        buildConfigField("String", "BASEURL", baseUrl)
 
-        buildConfigField("String", "PARAPHRASE", "\"nadhifm\"")
+        val paraphrase = properties.getProperty("PARAPHRASE") ?: ""
+        buildConfigField("String", "PARAPHRASE", paraphrase)
     }
 
     buildTypes {
